@@ -7,10 +7,10 @@ from flask_login import LoginManager, current_user, login_user, login_required, 
 from werkzeug.utils import secure_filename
 
 
-app = Flask(__name__)
-app.secret_key = '123'
+web_app = Flask(__name__)
+web_app.secret_key = '123'
 login_manager = LoginManager()
-login_manager.init_app(app)
+login_manager.init_app(web_app)
 login_manager.login_view = "login"  # 定义登录的 视图
 login_manager.login_message = '请登录以访问此页面'  # 定义需要登录访问页面的提示消息
 
@@ -44,16 +44,16 @@ def request_loader(request):
 class User(UserMixin):
     pass
 
-@app.route('/')
+@web_app.route('/')
 def index():
     return render_template('index.html')
 
 
-@app.route('/n')
+@web_app.route('/n')
 def indexn():
     return render_template('n.html')
 
-@app.route('/login', methods=['GET', 'POST'])
+@web_app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
         return render_template('login.html')
@@ -69,17 +69,17 @@ def login():
     return 'Bad login'
 
 
-@app.route('/protected')
+@web_app.route('/protected')
 @login_required
 def protected():
     return 'Logged in as: ' + current_user.id
 
-@app.route('/logout')
+@web_app.route('/logout')
 def logout():
     logout_user()
     return 'Logged out'
 
-@app.route('/test')
+@web_app.route('/test')
 def test():
     user = {'nickname': 'Miguel'}  # fake user
     posts = [  # fake array of posts
@@ -107,7 +107,7 @@ def unauthorized_handler():
                    </form>
                    '''
 
-@app.route('/upload', methods=['POST', 'GET'])
+@web_app.route('/upload', methods=['POST', 'GET'])
 def upload():
      if request.method == 'POST':
         f = request.files['file']
@@ -119,7 +119,7 @@ def upload():
      return render_template('upload.html')
 
 
-@app.route('/index1', methods=['GET'])
+@web_app.route('/index1', methods=['GET'])
 def haha():
     basepath = os.path.dirname(__file__)
     imagePath= os.path.join(basepath, 'static', 'images', 'portfolio')
@@ -132,6 +132,8 @@ def haha():
                            portfolioImages=portfolioImages)
 
 
+# start command : uwsgi --http :9090 --wsgi-file FlaskWeb.py --callable web_app --master --processes 4 --threads 2 --stats 127.0.0.1:9191
+#application = web_app.wsgi_app
 
-if __name__ == '__main__':
-    app.run(debug=True,port=8000)
+# if __name__ == '__main__':
+#     web_app.run(debug=True,port=8000)

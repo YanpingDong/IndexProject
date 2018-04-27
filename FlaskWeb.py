@@ -48,6 +48,7 @@ class User(UserMixin):
 def index():
     return render_template('index.html')
 
+
 @app.route('/n')
 def indexn():
     return render_template('n.html')
@@ -118,15 +119,17 @@ def upload():
      return render_template('upload.html')
 
 
-@app.route('/json', methods=['GET'])
+@app.route('/index1', methods=['GET'])
 def haha():
     basepath = os.path.dirname(__file__)
     imagePath= os.path.join(basepath, 'static', 'images', 'portfolio')
-    response={}
+    portfolioImages=[]
     for name in os.listdir(imagePath):
-        response[name]=name
+        portfolioImages.append(name)
 
-    return json.dumps(response)
+    return render_template("index_1.html",
+                           title='index_1',
+                           portfolioImages=portfolioImages)
 
 
 

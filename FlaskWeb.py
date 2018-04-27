@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-
-
+import json
+import os
 from flask import Flask, redirect, url_for, request, render_template
 from flask_login import LoginManager, current_user, login_user, login_required, UserMixin,logout_user
+from werkzeug.utils import secure_filename
+
 
 app = Flask(__name__)
 app.secret_key = '123'
@@ -13,6 +15,7 @@ login_manager.login_view = "login"  # 定义登录的 视图
 login_manager.login_message = '请登录以访问此页面'  # 定义需要登录访问页面的提示消息
 
 users = {'foo@bar.tld': {'password': 'secret'}}
+basepath = os.path.dirname(__file__)
 
 @login_manager.user_loader
 def user_loader(email):
@@ -75,6 +78,24 @@ def logout():
     logout_user()
     return 'Logged out'
 
+@app.route('/test')
+def test():
+    user = {'nickname': 'Miguel'}  # fake user
+    posts = [  # fake array of posts
+        {
+            'author': {'nickname': 'John'},
+            'body': 'Beautiful day in Portland!'
+        },
+        {
+            'author': {'nickname': 'Susan'},
+            'body': 'The Avengers movie was so cool!'
+        }
+    ]
+    return render_template("test.html",
+                           title='',
+                           user=user,
+                           posts=posts)
+
 @login_manager.unauthorized_handler
 def unauthorized_handler():
     return '''
@@ -84,6 +105,30 @@ def unauthorized_handler():
                     <input type='submit' name='submit'/>
                    </form>
                    '''
+
+@app.route('/upload', methods=['POST', 'GET'])
+def upload():
+     if request.method == 'POST':
+        f = request.files['file']
+        basepath = os.path.dirname(__file__)  # 当前文件所在路径
+        upload_path = os.path.join(basepath, 'static','upload',secure_filename(f.filename))
+        #注意：没有的文件夹一定要先创建，不然会提示没有该路径
+        f.save(upload_path)
+        return redirect(url_for('upload'))
+     return render_template('upload.html')
+
+
+@app.route('/json', methods=['GET'])
+def haha():
+    basepath = os.path.dirname(__file__)
+    imagePath= os.path.join(basepath, 'static', 'images', 'portfolio')
+    response={}
+    for name in os.listdir(imagePath):
+        response[name]=name
+
+    return json.dumps(response)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True,port=8000)

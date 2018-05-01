@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
+
 import json
 import os
 from flask import Flask, redirect, url_for, request, render_template
 from flask_login import LoginManager, current_user, login_user, login_required, UserMixin,logout_user
 from werkzeug.utils import secure_filename
-
+from PathConfig import basedpath
+from dao.ReadAndWriteJson import IndexPageInfoDao
 
 web_app = Flask(__name__)
 web_app.secret_key = '123'
@@ -15,7 +17,8 @@ login_manager.login_view = "login"  # 定义登录的 视图
 login_manager.login_message = '请登录以访问此页面'  # 定义需要登录访问页面的提示消息
 
 users = {'foo@bar.tld': {'password': 'secret'}}
-basepath = os.path.dirname(__file__)
+
+ipid = IndexPageInfoDao(basedpath)
 
 @login_manager.user_loader
 def user_loader(email):
@@ -46,12 +49,18 @@ class User(UserMixin):
 
 @web_app.route('/')
 def index():
+
     return render_template('index.html')
 
 
-@web_app.route('/n')
+@web_app.route('/detail')
 def indexn():
-    return render_template('n.html')
+    name = request.args.get('name')
+    detailImages = ipid.getSpecifiedDetailInfo(name)
+    return render_template('detail.html',
+                           title='detail',
+                           detailImages = detailImages)
+
 
 @web_app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -121,19 +130,15 @@ def upload():
 
 @web_app.route('/index1', methods=['GET'])
 def haha():
-    basepath = os.path.dirname(__file__)
-    imagePath= os.path.join(basepath, 'static', 'images', 'portfolio')
-    portfolioImages=[]
-    for name in os.listdir(imagePath):
-        portfolioImages.append(name)
+    portfolioImagesInfo = ipid.getIndexPageImageDetailArray()
 
     return render_template("index_1.html",
                            title='index_1',
-                           portfolioImages=portfolioImages)
+                           portfolioImages=portfolioImagesInfo)
 
 
 # start command : uwsgi --http :9090 --wsgi-file FlaskWeb.py --callable web_app --master --processes 4 --threads 2 --stats 127.0.0.1:9191
-#application = web_app.wsgi_app
+application = web_app.wsgi_app
 
-# if __name__ == '__main__':
-#     web_app.run(debug=True,port=8000)
+if __name__ == '__main__':
+    web_app.run(debug=True,port=8000)

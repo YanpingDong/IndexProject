@@ -78,14 +78,13 @@
 
 <!-- works -->
 <div id="works"  class=" clearfix grid">
-    portfolioImages
     {% for portfolioImage in portfolioImages %}
     <figure class="effect-oscar  wowload fadeInUp">
-        <img src="/static/images/portfolio/{{portfolioImage}}" alt="asdfasf"/>
+        <img src="/static/images/portfolio/{{portfolioImage.imageName}}" alt="asdfasf"/>
         <figcaption>
-            <h2>Nature</h2>
-            <p>Lily likes to play with crayons and pencils<br>
-            <a href="/n" title="1">View more</a></p>
+            <h2>{{portfolioImage.name}}</h2>
+            <p>{{portfolioImage.discription}}<br>
+            <a href="/detail?name={{portfolioImage.name}}" title="{{portfolioImage.name}}">View more</a></p>
         </figcaption>
     </figure>
     {% endfor %}
@@ -286,8 +285,7 @@
 
 <!-- Footer Starts -->
 <div class="footer text-center spacer">
-<p class="wowload flipInX"><a href="#"><i class="fa fa-facebook fa-2x"></i></a> <a href="#"><i class="fa fa-instagram fa-2x"></i></a> <a href="#"><i class="fa fa-twitter fa-2x"></i></a> <a href="#"><i class="fa fa-flickr fa-2x"></i></a> </p>
-Copyright 2014 Cyrus Creative Studio. All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+<!--<p class="wowload flipInX"><a href="#"><i class="fa fa-facebook fa-2x"></i></a> <a href="#"><i class="fa fa-instagram fa-2x"></i></a> -->
 </div>
 <!-- # Footer Ends -->
 <a href="#works" class="gototop "><i class="fa fa-angle-up  fa-3x"></i></a>

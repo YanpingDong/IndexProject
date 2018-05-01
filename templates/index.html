@@ -76,133 +76,36 @@
 
 
 
-
-
-
-
 <!-- works -->
-<div id="works"  class=" clearfix grid"> 
+<div id="works"  class=" clearfix grid">
+    {% for portfolioImage in portfolioImages %}
     <figure class="effect-oscar  wowload fadeInUp">
-        <img src="/static/images/portfolio/1.jpg" alt="asdfasf"/>
+        <img src="/static/images/portfolio/{{portfolioImage.imageName}}" alt="asdfasf"/>
         <figcaption>
-            <h2>Nature</h2>
-            <p>Lily likes to play with crayons and pencils<br>
-            <a href="/n" title="1">View more</a></p>
+            <h2>{{portfolioImage.name}}</h2>
+            <p>{{portfolioImage.discription}}<br>
+            <a href="/detail?name={{portfolioImage.name}}" title="{{portfolioImage.name}}">View more</a></p>
         </figcaption>
     </figure>
-     <figure class="effect-oscar  wowload fadeInUp">
-        <img src="/static/images/portfolio/2.jpg" alt="img01"/>
-        <figcaption>
-            <h2>Events</h2>
-            <p>Lily likes to play with crayons and pencils<br>
-            <a href="/static/images/portfolio/2.jpg" title="1" data-gallery>View more</a></p>
-        </figcaption>
-    </figure>
-     <figure class="effect-oscar  wowload fadeInUp">
-        <img src="/static/images/portfolio/3.jpg" alt="img01"/>
-        <figcaption>
-            <h2>music</h2>
-            <p>Lily likes to play with crayons and pencils<br>
-            <a href="/static/images/portfolio/3.jpg" title="1" data-gallery>View more</a></p>
-        </figcaption>
-    </figure>
-     <figure class="effect-oscar  wowload fadeInUp">
-        <img src="/static/images/portfolio/4.jpg" alt="img01"/>
-        <figcaption>
-            <h2>Vintage</h2>
-            <p>Lily likes to play with crayons and pencils<br>
-            <a href="/static/images/portfolio/4.jpg" title="1" data-gallery>View more</a></p>
-        </figcaption>
-    </figure>
-     <figure class="effect-oscar  wowload fadeInUp">
-        <img src="/static/images/portfolio/5.jpg" alt="img01"/>
-        <figcaption>
-            <h2>Typers</h2>
-            <p>Lily likes to play with crayons and pencils<br>
-            <a href="/static/images/portfolio/5.jpg" title="1" data-gallery>View more</a></p>
-        </figcaption>
-    </figure>
-
-     <figure class="effect-oscar  wowload fadeInUp">
-        <img src="/static/images/portfolio/6.jpg" alt="img01"/>
-        <figcaption>
-            <h2>hotel</h2>
-            <p>Lily likes to play with crayons and pencils<br>
-            <a href="/static/images/portfolio/6.jpg" title="1" data-gallery>View more</a></p>
-        </figcaption>
-    </figure>
-    <figure class="effect-oscar  wowload fadeInUp">
-        <img src="/static/images/portfolio/7.jpg" alt="img01"/>
-        <figcaption>
-            <h2>Chinese</h2>
-            <p>Lily likes to play with crayons and pencils<br>
-            <a href="/static/images/portfolio/7.jpg" title="1" data-gallery>View more</a></p>
-        </figcaption>
-    </figure>
-    <figure class="effect-oscar  wowload fadeInUp">
-        <img src="/static/images/portfolio/8.jpg" alt="img01"/>
-        <figcaption>
-            <h2>Dicrap</h2>
-            <p>Lily likes to play with crayons and pencils<br>
-            <a href="/static/images/portfolio/8.jpg" title="1" data-gallery>View more</a></p>
-        </figcaption>
-    </figure>
-    <figure class="effect-oscar  wowload fadeInUp">
-        <img src="/static/images/portfolio/9.jpg" alt="img01"/>
-        <figcaption>
-            <h2>Coffee</h2>
-            <p>Lily likes to play with crayons and pencils<br>
-            <a href="/static/images/portfolio/9.jpg" title="1" data-gallery>View more</a></p>
-        </figcaption>
-    </figure>
-    <figure class="effect-oscar  wowload fadeInUp">
-        <img src="/static/images/portfolio/10.jpg" alt="img01"/>
-        <figcaption>
-            <h2>cameras</h2>
-            <p>Lily likes to play with crayons and pencils<br>
-            <a href="/static/images/portfolio/10.jpg" title="1" data-gallery>View more</a></p>
-        </figcaption>
-    </figure>
-    <figure class="effect-oscar  wowload fadeInUp">
-        <img src="/static/images/portfolio/11.jpg" alt="img01"/>
-        <figcaption>
-            <h2>design</h2>
-            <p>Lily likes to play with crayons and pencils<br>
-            <a href="/static/images/portfolio/11.jpg" title="1" data-gallery>View more</a></p>
-        </figcaption>
-    </figure>
-    <figure class="effect-oscar  wowload fadeInUp">
-        <img src="/static/images/portfolio/12.jpg" alt="img01"/>
-        <figcaption>
-            <h2>studio</h2>
-            <p>Lily likes to play with crayons and pencils<br>
-            <a href="/static/images/portfolio/12.jpg" title="1" data-gallery>View more</a></p>
-        </figcaption>
-    </figure>
-
-
-     
+    {% endfor %}
 </div>
 <!-- works -->
 
 
 
-
-
-
 <!-- Cirlce Starts -->
 <div id="about"  class="container spacer about">
-<h2 class="text-center wowload fadeInUp">Creative digital agency based on London</h2>  
+<h2 class="text-center wowload fadeInUp">Creative digital agency based on London</h2>
   <div class="row">
   <div class="col-sm-6 wowload fadeInLeft">
     <h4><i class="fa fa-paint-brush"></i> Design</h4>
     <p>Creative digital agency for sleek and sophisticated solutions for mobile, websites and software designs, lead by passionate and uber progressive team that lives and breathes design. Creative digital agency for sleek and sophisticated solutions for mobile, websites and software designs.</p>
-    
+
 
   </div>
   <div class="col-sm-6 wowload fadeInRight">
   <h4><i class="fa fa-code"></i> Frontend & Backend Development</h4>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>    
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
   </div>
   </div>
 
@@ -220,7 +123,7 @@
         </li>
         <li>
             <span><i class="fa fa-magic"></i><b>Integration</b></span>
-        </li>        
+        </li>
         <li>
             <span><i class="fa fa-cloud-upload"></i><b>Deliver</b></span>
         </li>
@@ -273,11 +176,11 @@
 
 
     <div id="carousel-testimonials" class="carousel slide testimonails  wowload fadeInRight" data-ride="carousel">
-    <div class="carousel-inner">  
+    <div class="carousel-inner">
       <div class="item active animated bounceInRight row">
       <div class="animated slideInLeft col-xs-2"><img alt="portfolio" src="/static/images/team/1.jpg" width="100" class="img-circle img-responsive"></div>
       <div  class="col-xs-10">
-      <p> I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. </p>      
+      <p> I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. </p>
       <span>Angel Smith - <b>eshop Canada</b></span>
       </div>
       </div>
@@ -315,12 +218,12 @@
 <!-- team -->
 <h3 class="text-center  wowload fadeInUp">Our team</h3>
 <p class="text-center  wowload fadeInLeft">Our creative team that is making everything possible</p>
-<div class="row grid team  wowload fadeInUpBig">	
+<div class="row grid team  wowload fadeInUpBig">
 	<div class=" col-sm-3 col-xs-6">
 	<figure class="effect-chico">
         <img src="/static/images/team/8.jpg" alt="img01" class="img-responsive" />
         <figcaption>
-            <p><b>Barbara Husto</b><br>Senior Designer<br><br><a href="#"><i class="fa fa-dribbble"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a></p>            
+            <p><b>Barbara Husto</b><br>Senior Designer<br><br><a href="#"><i class="fa fa-dribbble"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a></p>
         </figcaption>
     </figure>
     </div>
@@ -328,8 +231,8 @@
     <div class=" col-sm-3 col-xs-6">
 	<figure class="effect-chico">
         <img src="/static/images/team/10.jpg" alt="img01"/>
-        <figcaption>            
-            <p><b>Barbara Husto</b><br>Senior Designer<br><br><a href="#"><i class="fa fa-dribbble"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a></p>            
+        <figcaption>
+            <p><b>Barbara Husto</b><br>Senior Designer<br><br><a href="#"><i class="fa fa-dribbble"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a></p>
         </figcaption>
     </figure>
     </div>
@@ -338,7 +241,7 @@
 	<figure class="effect-chico">
         <img src="/static/images/team/12.jpg" alt="img01"/>
         <figcaption>
-            <p><b>Barbara Husto</b><br>Senior Designer<br><br><a href="#"><i class="fa fa-dribbble"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a></p>          
+            <p><b>Barbara Husto</b><br>Senior Designer<br><br><a href="#"><i class="fa fa-dribbble"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a></p>
         </figcaption>
     </figure>
     </div>
@@ -352,7 +255,7 @@
     </figure>
     </div>
 
- 
+
 </div>
 <!-- team -->
 
@@ -363,8 +266,8 @@
 
 <div class="container contactform center">
 <h2 class="text-center  wowload fadeInUp">Get in touch to start your project</h2>
-  <div class="row wowload fadeInLeftBig">      
-      <div class="col-sm-6 col-sm-offset-3 col-xs-12">      
+  <div class="row wowload fadeInLeftBig">
+      <div class="col-sm-6 col-sm-offset-3 col-xs-12">
         <input type="text" placeholder="Name">
         <input type="text" placeholder="Company">
         <textarea rows="5" placeholder="Message"></textarea>
@@ -382,8 +285,7 @@
 
 <!-- Footer Starts -->
 <div class="footer text-center spacer">
-<p class="wowload flipInX"><a href="#"><i class="fa fa-facebook fa-2x"></i></a> <a href="#"><i class="fa fa-instagram fa-2x"></i></a> <a href="#"><i class="fa fa-twitter fa-2x"></i></a> <a href="#"><i class="fa fa-flickr fa-2x"></i></a> </p>
-Copyright 2014 Cyrus Creative Studio. All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+<!--<p class="wowload flipInX"><a href="#"><i class="fa fa-facebook fa-2x"></i></a> <a href="#"><i class="fa fa-instagram fa-2x"></i></a> -->
 </div>
 <!-- # Footer Ends -->
 <a href="#works" class="gototop "><i class="fa fa-angle-up  fa-3x"></i></a>
@@ -401,7 +303,7 @@ Copyright 2014 Cyrus Creative Studio. All rights reserved.More Templates <a href
     <a class="prev">‹</a>
     <a class="next">›</a>
     <a class="close">×</a>
-    <!-- The modal dialog, which will be used to wrap the lightbox content -->    
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
 </div>
 
 

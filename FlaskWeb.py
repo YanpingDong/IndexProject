@@ -47,11 +47,6 @@ def request_loader(request):
 class User(UserMixin):
     pass
 
-@web_app.route('/')
-def index():
-
-    return render_template('index.html')
-
 
 @web_app.route('/detail')
 def indexn():
@@ -128,12 +123,12 @@ def upload():
      return render_template('upload.html')
 
 
-@web_app.route('/index1', methods=['GET'])
+@web_app.route('/', methods=['GET'])
 def haha():
     portfolioImagesInfo = ipid.getIndexPageImageDetailArray()
 
-    return render_template("index_1.html",
-                           title='index_1',
+    return render_template("index.html",
+                           title='index',
                            portfolioImages=portfolioImagesInfo)
 
 
@@ -141,4 +136,4 @@ def haha():
 application = web_app.wsgi_app
 
 if __name__ == '__main__':
-    web_app.run(debug=True,port=8000)
+    web_app.run(debug=True,port=8080)

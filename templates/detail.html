@@ -41,16 +41,25 @@
           <div class="container">
             <div class="navbar-header">
               <!-- Logo Starts -->
-              <a class="navbar-brand" href="#home"><img src="/static/images/logo.png" alt="logo"></a>
+              <a class="navbar-brand" href="/"><img src="/static/images/logo.png" alt="logo"></a>
               <!-- #Logo Ends -->
+
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <!--<span class="icon-bar"></span>-->
+              </button>
             </div>
 
             <!-- Nav Starts -->
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
-                 <li><a href="/">Home</a></li>
+                 <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+                 <li class="scroll"><a href="#contact">Contact</a></li>
               </ul>
             </div>
+
             <!-- #Nav Ends -->
 
           </div>
@@ -170,7 +179,25 @@
 </div>
 <!-- works -->
 
+<!--Contact Starts-->
+<div id="contact" class="spacer">
 
+<div class="container contactform center">
+<h2 class="text-center  wowload fadeInUp">Get in touch to start your project</h2>
+  <div class="row wowload fadeInLeftBig">
+      <div class="col-sm-6 col-sm-offset-3 col-xs-12">
+        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Company">
+        <textarea rows="5" placeholder="Message"></textarea>
+        <button class="btn btn-primary"><i class="fa fa-paper-plane"></i> Send</button>
+      </div>
+  </div>
+
+
+
+</div>
+</div>
+<!--Contact Ends-->
 
 <!-- Footer Starts -->
 <div class="footer text-center spacer">

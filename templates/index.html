@@ -7,10 +7,11 @@
 <title>YMST</title>
 
 <!-- Google fonts -->
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
-
+<!--<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>-->
+<link rel="stylesheet" href="/static/assets/googleapis_family_roboto.css" />
 <!-- font awesome -->
-<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="/static/assets/fontawesome/css/fontawesome-all.min.css" rel="stylesheet">
+<!--<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
 
 <!-- bootstrap -->
 <link rel="stylesheet" href="/static/assets/bootstrap/css/bootstrap.min.css" />
@@ -28,6 +29,9 @@
 
 
 <link rel="stylesheet" href="/static/assets/style.css">
+<style>
+    .font-5x{font-size:5em}
+</style>
 
 </head>
 
@@ -75,11 +79,10 @@
 <!-- #Header Starts -->
 
 
-
 <!-- works -->
 <div id="works"  class=" clearfix grid">
     {% for portfolioImage in portfolioImages %}
-    <figure class="effect-oscar  wowload fadeInUp">
+    <figure class="effect-oscar wowload fadeInUp">
         <img src="/static/images/portfolio/{{portfolioImage.imageName}}" alt="asdfasf"/>
         <figcaption>
             <h2>{{portfolioImage.name}}</h2>
@@ -92,7 +95,6 @@
 <!-- works -->
 
 
-
 <!-- Cirlce Starts -->
 <div id="about"  class="container spacer about">
 <h2 class="text-center wowload fadeInUp">Creative digital agency based on London</h2>
@@ -100,8 +102,7 @@
   <div class="col-sm-6 wowload fadeInLeft">
     <h4><i class="fa fa-paint-brush"></i> Design</h4>
     <p>Creative digital agency for sleek and sophisticated solutions for mobile, websites and software designs, lead by passionate and uber progressive team that lives and breathes design. Creative digital agency for sleek and sophisticated solutions for mobile, websites and software designs.</p>
-
-
+      
   </div>
   <div class="col-sm-6 wowload fadeInRight">
   <h4><i class="fa fa-code"></i> Frontend & Backend Development</h4>
@@ -139,16 +140,13 @@
 <div class="overlay spacer">
 <div class="container">
 <div class="row text-center  wowload fadeInDownBig">
-  <div class="col-sm-3 col-xs-6">
-  <i class="fa fa-smile-o  fa-5x"></i><h4>24 Clients</h4>
+  <div class="col-sm-4 col-xs-6">
+  <i class="fa fa-user  fa-5x"></i><h4>24 Clients</h4>
   </div>
-  <div class="col-sm-3 col-xs-6">
+  <div class="col-sm-4 col-xs-6">
   <i class="fa fa-rocket  fa-5x"></i><h4>75 Projects</h4>
   </div>
-  <div class="col-sm-3 col-xs-6">
-  <i class="fa fa-cloud-download  fa-5x"></i><h4>454 Downloads</h4>
-  </div>
-  <div class="col-sm-3 col-xs-6">
+  <div class="col-sm-4 col-xs-6">
   <i class="fa fa-map-marker fa-5x"></i><h4>2 Offices</h4>
   </div>
 </div>
@@ -156,11 +154,6 @@
 </div>
 </div>
 <!-- About Ends -->
-
-
-
-
-
 
 
 <div id="partners" class="container spacer ">
@@ -271,10 +264,9 @@
         <input type="text" placeholder="Name">
         <input type="text" placeholder="Company">
         <textarea rows="5" placeholder="Message"></textarea>
-        <button class="btn btn-primary"><i class="fa fa-paper-plane"></i> Send</button>
+        <button class="btn btn-primary"><i class="glyphicon glyphicon-send"></i> Send</button>
       </div>
   </div>
-
 
 
 </div>

@@ -49,7 +49,7 @@ class User(UserMixin):
 
 
 @web_app.route('/detail')
-def indexn():
+def detail():
     name = request.args.get('name')
     detailImages = ipid.getSpecifiedDetailInfo(name)
     return render_template('detail.html',
@@ -124,7 +124,7 @@ def upload():
 
 
 @web_app.route('/', methods=['GET'])
-def haha():
+def index():
     portfolioImagesInfo = ipid.getIndexPageImageDetailArray()
 
     return render_template("index.html",
@@ -136,4 +136,4 @@ def haha():
 application = web_app.wsgi_app
 
 if __name__ == '__main__':
-    web_app.run(debug=True,port=8080)
+    web_app.run(host='10.120.137.60',debug=True,port=8080)

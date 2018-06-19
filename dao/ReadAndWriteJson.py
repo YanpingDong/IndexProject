@@ -14,7 +14,7 @@ class IndexPageInfoDao(object):
     def getIndexPageImageDetailArray(self):
         loadJson = {}
         if os.path.exists(self.indexImageInfPath):
-            with open(self.indexImageInfPath) as indexImageInfo:
+            with open(self.indexImageInfPath,'r',encoding = 'utf-8') as indexImageInfo:
                 loadJson = json.load(indexImageInfo)
 
         return loadJson
@@ -23,7 +23,7 @@ class IndexPageInfoDao(object):
         loadJson = {}
         detailPath = os.path.join(self.detailDir, name + '.json')
         if os.path.exists(detailPath):
-            with open(detailPath) as detailImfon:
+            with open(detailPath,'r',encoding = 'utf-8') as detailImfon:
                 loadJson = json.load(detailImfon)
 
         return loadJson

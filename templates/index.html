@@ -48,8 +48,6 @@
               <!-- Logo Starts -->
               <a class="navbar-brand" href="#home"><img src="/static/images/logo.png" alt="logo"></a>
               <!-- #Logo Ends -->
-
-
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -83,9 +81,9 @@
 <div id="works"  class=" clearfix grid">
     {% for portfolioImage in portfolioImages %}
     <figure class="effect-oscar wowload fadeInUp">
-        <img src="/static/images/portfolio/{{portfolioImage.imageName}}" alt="asdfasf"/>
+        <img src="/static/images/portfolio/{{portfolioImage.imageName}}" width="800" height="400"  alt="index"/>
         <figcaption>
-            <h2>{{portfolioImage.name}}</h2>
+            <h3>{{portfolioImage.name}}</h3>
             <p>{{portfolioImage.discription}}<br>
             <a href="/detail?name={{portfolioImage.name}}" title="{{portfolioImage.name}}">View more</a></p>
         </figcaption>
@@ -123,10 +121,7 @@
             <span><i class="fa fa-database"></i><b>Develop</b></span>
         </li>
         <li>
-            <span><i class="fa fa-magic"></i><b>Integration</b></span>
-        </li>
-        <li>
-            <span><i class="fa fa-cloud-upload"></i><b>Deliver</b></span>
+            <span><i class="fa fa-rocket"></i><b>Deliver</b></span>
         </li>
     </ul>
   </div>
@@ -139,13 +134,13 @@
 <div class="container">
 <div class="row text-center  wowload fadeInDownBig">
   <div class="col-sm-4 col-xs-6">
-  <i class="fa fa-user  fa-5x"></i><h4>24 Clients</h4>
+  <i class="fa fa-user  fa-5x"></i><h4>11 Clients</h4>
   </div>
   <div class="col-sm-4 col-xs-6">
-  <i class="fa fa-rocket  fa-5x"></i><h4>75 Projects</h4>
+  <i class="fa fa-rocket  fa-5x"></i><h4>15 Projects</h4>
   </div>
   <div class="col-sm-4 col-xs-6">
-  <i class="fa fa-map-marker fa-5x"></i><h4>2 Offices</h4>
+  <i class="fa fa-map-marker fa-5x"></i><h4>1 Offices</h4>
   </div>
 </div>
 </div>
@@ -154,56 +149,56 @@
 <!-- About Ends -->
 
 
-<div id="partners" class="container spacer ">
-	<h2 class="text-center  wowload fadeInUp">Some of our happy clients</h2>
-  <div class="clearfix">
-    <div class="col-sm-6 partners  wowload fadeInLeft">
-         <img src="/static/images/partners/1.jpg" alt="partners">
-         <img src="/static/images/partners/2.jpg" alt="partners">
-         <img src="/static/images/partners/3.jpg" alt="partners">
-         <img src="/static/images/partners/4.jpg" alt="partners">
-    </div>
-    <div class="col-sm-6">
+<!--<div id="partners" class="container spacer ">-->
+	<!--<h2 class="text-center  wowload fadeInUp">Some of our happy clients</h2>-->
+  <!--<div class="clearfix">-->
+    <!--<div class="col-sm-6 partners  wowload fadeInLeft">-->
+         <!--<img src="/static/images/partners/1.jpg" alt="partners">-->
+         <!--<img src="/static/images/partners/2.jpg" alt="partners">-->
+         <!--<img src="/static/images/partners/3.jpg" alt="partners">-->
+         <!--<img src="/static/images/partners/4.jpg" alt="partners">-->
+    <!--</div>-->
+    <!--<div class="col-sm-6">-->
 
 
-    <div id="carousel-testimonials" class="carousel slide testimonails  wowload fadeInRight" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="item active animated bounceInRight row">
-      <div class="animated slideInLeft col-xs-2"><img alt="portfolio" src="/static/images/team/1.jpg" width="100" class="img-circle img-responsive"></div>
-      <div  class="col-xs-10">
-      <p> I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. </p>
-      <span>Angel Smith - <b>eshop Canada</b></span>
-      </div>
-      </div>
-      <div class="item  animated bounceInRight row">
-      <div class="animated slideInLeft col-xs-2"><img alt="portfolio" src="/static/images/team/2.jpg" width="100" class="img-circle img-responsive"></div>
-      <div  class="col-xs-10">
-      <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.</p>
-      <span>John Partic - <b>Crazy Pixel</b></span>
-      </div>
-      </div>
-      <div class="item  animated bounceInRight row">
-      <div class="animated slideInLeft  col-xs-2"><img alt="portfolio" src="/static/images/team/3.jpg" width="100" class="img-circle img-responsive"></div>
-      <div  class="col-xs-10">
-      <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>
-      <span>Harris David - <b>Jet London</b></span>
-      </div>
-      </div>
-  </div>
+    <!--<div id="carousel-testimonials" class="carousel slide testimonails  wowload fadeInRight" data-ride="carousel">-->
+    <!--<div class="carousel-inner">-->
+      <!--<div class="item active animated bounceInRight row">-->
+      <!--<div class="animated slideInLeft col-xs-2"><img alt="portfolio" src="/static/images/team/1.jpg" width="100" class="img-circle img-responsive"></div>-->
+      <!--<div  class="col-xs-10">-->
+      <!--<p> I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. </p>-->
+      <!--<span>Angel Smith - <b>eshop Canada</b></span>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--<div class="item  animated bounceInRight row">-->
+      <!--<div class="animated slideInLeft col-xs-2"><img alt="portfolio" src="/static/images/team/2.jpg" width="100" class="img-circle img-responsive"></div>-->
+      <!--<div  class="col-xs-10">-->
+      <!--<p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.</p>-->
+      <!--<span>John Partic - <b>Crazy Pixel</b></span>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--<div class="item  animated bounceInRight row">-->
+      <!--<div class="animated slideInLeft  col-xs-2"><img alt="portfolio" src="/static/images/team/3.jpg" width="100" class="img-circle img-responsive"></div>-->
+      <!--<div  class="col-xs-10">-->
+      <!--<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue.</p>-->
+      <!--<span>Harris David - <b>Jet London</b></span>-->
+      <!--</div>-->
+      <!--</div>-->
+  <!--</div>-->
 
-   <!-- Indicators -->
-   	<ol class="carousel-indicators">
-    <li data-target="#carousel-testimonials" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-testimonials" data-slide-to="1"></li>
-    <li data-target="#carousel-testimonials" data-slide-to="2"></li>
-  	</ol>
-  	<!-- Indicators -->
-  </div>
+   <!--&lt;!&ndash; Indicators &ndash;&gt;-->
+   	<!--<ol class="carousel-indicators">-->
+    <!--<li data-target="#carousel-testimonials" data-slide-to="0" class="active"></li>-->
+    <!--<li data-target="#carousel-testimonials" data-slide-to="1"></li>-->
+    <!--<li data-target="#carousel-testimonials" data-slide-to="2"></li>-->
+  	<!--</ol>-->
+  	<!--&lt;!&ndash; Indicators &ndash;&gt;-->
+  <!--</div>-->
 
 
 
-    </div>
-  </div>
+    <!--</div>-->
+  <!--</div>-->
 
 
 <!-- team -->
@@ -271,30 +266,27 @@
 </div>
 <!--Contact Ends-->
 
-
-
 <!-- Footer Starts -->
 <div class="footer text-center spacer">
-<!--<p class="wowload flipInX"><a href="#"><i class="fa fa-facebook fa-2x"></i></a> <a href="#"><i class="fa fa-instagram fa-2x"></i></a> -->
+<p class="wowload flipInX"><a href="#"><i class="fa fa-facebook fa-2x"></i></a> <a href="#"><i class="fa fa-instagram fa-2x"></i></a> <a href="#"><i class="fa fa-twitter fa-2x"></i></a> <a href="#"><i class="fa fa-flickr fa-2x"></i></a> </p>
+Copyright 2018 元铭生态园林. All rights reserved.More Templates - Collect from DYP
 </div>
 <!-- # Footer Ends -->
 <a href="#works" class="gototop "><i class="fa fa-angle-up  fa-3x"></i></a>
 
 
 
-
-
 <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-    <!-- The container for the modal slides -->
-    <div class="slides"></div>
-    <!-- Controls for the borderless lightbox -->
-    <h3 class="title">Title</h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <!-- The modal dialog, which will be used to wrap the lightbox content -->
-</div>
+<!--<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">-->
+    <!--&lt;!&ndash; The container for the modal slides &ndash;&gt;-->
+    <!--<div class="slides"></div>-->
+    <!--&lt;!&ndash; Controls for the borderless lightbox &ndash;&gt;-->
+    <!--<h3 class="title">Title</h3>-->
+    <!--<a class="prev">‹</a>-->
+    <!--<a class="next">›</a>-->
+    <!--<a class="close">×</a>-->
+    <!--&lt;!&ndash; The modal dialog, which will be used to wrap the lightbox content &ndash;&gt;-->
+<!--</div>-->
 
 
 

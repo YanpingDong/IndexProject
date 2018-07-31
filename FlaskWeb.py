@@ -126,14 +126,15 @@ def upload():
 @web_app.route('/', methods=['GET'])
 def index():
     portfolioImagesInfo = ipid.getIndexPageImageDetailArray()
-
+    teamInfo = ipid.getPartnerInfoArray()
     return render_template("index.html",
                            title='index',
-                           portfolioImages=portfolioImagesInfo)
+                           portfolioImages=portfolioImagesInfo, teamInfos=teamInfo)
 
 
 # start command : uwsgi --http :9090 --wsgi-file FlaskWeb.py --callable web_app --master --processes 4 --threads 2 --stats 127.0.0.1:9191
 application = web_app.wsgi_app
 
 if __name__ == '__main__':
-    web_app.run(host='10.120.137.60',debug=True,port=8080)
+    # web_app.run(host='10.120.137.60',debug=True,port=8080)
+    web_app.run(host='localhost',debug=True,port=8080)

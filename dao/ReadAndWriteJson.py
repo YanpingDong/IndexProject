@@ -13,6 +13,7 @@ class IndexPageInfoDao(object):
         self.indexImageInfPath = os.path.join(self.daoPath, 'indexImageInf.json')
         self.detailDir = os.path.join(self.daoPath, 'detail')
         self.teamDir = os.path.join(self.daoPath, 'team')
+        self.partnerDir = os.path.join(self.daoPath, 'partner')
 
     def getIndexPageImageDetailArray(self):
         loadJson = {}
@@ -22,11 +23,20 @@ class IndexPageInfoDao(object):
 
         return loadJson
 
-    def getPartnerInfoArray(self):
+    def getTeamInfoArray(self):
         loadJson = {}
         teamFilePath = os.path.join(self.teamDir, 'team.json')
         if os.path.exists(teamFilePath):
             with open(teamFilePath, 'r', encoding='utf-8') as detailImfon:
+                loadJson = json.load(detailImfon)
+
+        return loadJson
+
+    def getPartnerInfoArray(self):
+        loadJson = {}
+        partnerFilePath = os.path.join(self.partnerDir, 'partner.json')
+        if os.path.exists(partnerFilePath):
+            with open(partnerFilePath, 'r', encoding='utf-8') as detailImfon:
                 loadJson = json.load(detailImfon)
 
         return loadJson
